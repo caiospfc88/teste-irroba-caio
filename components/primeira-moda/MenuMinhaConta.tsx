@@ -7,6 +7,7 @@ import { BsFillDoorOpenFill } from "react-icons/bs";
 import { FaClipboardList } from "react-icons/fa";
 import { IoMdHeart } from "react-icons/io";
 import { FaUserLarge } from "react-icons/fa6";
+import { FaChevronRight } from "react-icons/fa6";
 
 
 
@@ -20,29 +21,29 @@ const MenuMinhaConta = () => {
 
     if (logado == true) {
         return (
-            <Box>
+            <Box color={"#69593C"}>
                 <Menu>
                 <MenuButton as={Button} rightIcon={<IoIosArrowDown />} color={"#69593C"} bgColor={"transparent"}>
                     Minha Conta
                 </MenuButton>
                 <MenuList>
-                    <MenuItem value="Inicio" gap={"5px"}><Box color={"#7DE3B0"} ><FaClipboardList/></Box> Meus pedidos</MenuItem>
-                    <MenuItem value="Inicio" gap={"5px"}><Box color={"#7DE3B0"} ><IoMdHeart/></Box> Favoritos</MenuItem>
-                    <MenuItem value="Inicio" gap={"5px"}><Box color={"#7DE3B0"} ><FaUserLarge/></Box> Editar perfil</MenuItem>
+                    <MenuItem value="Inicio" gap={"5px"}><Box color={"#7DE3B0"} ><FaClipboardList/></Box> Meus pedidos <FaChevronRight/></MenuItem>
+                    <MenuItem value="Inicio" gap={"5px"}><Box color={"#7DE3B0"} ><IoMdHeart/></Box> Favoritos <FaChevronRight/></MenuItem>
+                    <MenuItem value="Inicio" gap={"5px"}><Box color={"#7DE3B0"} ><FaUserLarge/></Box> Editar perfil <FaChevronRight/></MenuItem>
                 </MenuList>
                 </Menu>
             </Box>
           )
     } else {
         return (
-            <Box>
+            <Box color={"#69593C"}>
                 <Menu>
                 <MenuButton as={Button} rightIcon={<IoIosArrowDown />} color={"#69593C"} bgColor={"transparent"}>
                     Minha Conta
                 </MenuButton>
                 <MenuList>
-                    <MenuItem value="Inicio" gap={"5px"}><Box color={"#7DE3B0"}><FaUserPlus/></Box> Criar Conta</MenuItem>
-                    <MenuItem value="Inicio" onClick={logar} gap={"5px"}><Box color={"#7DE3B0"} ><BsFillDoorOpenFill/></Box> Entrar</MenuItem>
+                    <MenuItem value="Inicio" gap={"5px"}><Box color={"#7DE3B0"}><FaUserPlus/></Box> Criar Conta <FaChevronRight/></MenuItem>
+                    <MenuItem value="Inicio" onClick={logar} gap={"5px"}><Box color={"#7DE3B0"} ><BsFillDoorOpenFill/></Box> Entrar <FaChevronRight/></MenuItem>
                 </MenuList>
                 </Menu>
             </Box>

@@ -5,37 +5,47 @@ import { LuSearch } from 'react-icons/lu';
 
 import MenuInstitucional from './MenuInstitucional';
 import MenuMinhaConta from './MenuMinhaConta';
+import Carrinho from './Carrinho';
+import ListaSubmenus from './ListaSubmenus';
 
 
 const TopMenu = () => {
 
   return (
-    <Box display={"flex"} flexDir={"row"} justifyContent={"center"}
-    w="100%" h="20vh" bgColor="#F8F6F2" gap={"3%"}
-    >
-        <Box display={"flex"} flexDir={"column"} h={"100%"} justifyContent={"center"}>
-            <Image src={"/images/logo_primeira_moda.png"} alt='Logo Primeira Moda' width={216} height={96}/>  
-        </Box>
-        <Box w={"20vw"} display={"flex"} flexDir={"column"} justifyContent={"center"}>
-            <Box h={"35%"}>
-                <InputGroup bgColor={"snow"} 
-                flex="1"
-                w={"95%"} borderRadius={"5%"}
-                >
-                    <Input placeholder="Busque na Loja" border={"2px #69593C solid"} />
-                    <InputRightElement width='4.5rem'>
-                        <Button h='1.75rem' size='sm' >
-                            <LuSearch />
-                        </Button>
-                    </InputRightElement>
-                </InputGroup>
+    <Box>
+        <Box display={"flex"} flexDir={"row"} justifyContent={"center"}
+        w="100%" h="17vh" bgColor="#F8F6F2" gap={"1.5%"}
+        >
+            <Box display={"flex"} flexDir={"column"} h={"100%"} justifyContent={"center"}>
+                <Image src={"/images/logo_primeira_moda.png"} alt='Logo Primeira Moda' width={216} height={96}/>  
+            </Box>
+            <Box w={"35vw"} display={"flex"} flexDir={"column"} justifyContent={"center"}>
+                <Box h={"35%"}>
+                    <InputGroup bgColor={"snow"} 
+                    flex="1" 
+                    w={"95%"} borderRadius={"5%"}
+                    >
+                        <Input placeholder="Busque na Loja" border={"2px #69593C solid"} h={"60px"} fontSize={"1.2rem"}/>
+                        <InputRightElement width='4.5rem' h={'3.8rem'}>
+                            <Button h='3rem' size='md' bgColor={"transparent"}>
+                                <LuSearch />
+                            </Button>
+                        </InputRightElement>
+                    </InputGroup>
+                </Box>
+            </Box>
+            <Box w={"7vw"} display={"flex"} flexDir={"column"} justifyContent={"center"}>
+                <MenuInstitucional/>
+            </Box>
+            <Box w={"7vw"} display={"flex"} flexDir={"column"} justifyContent={"center"}>
+                <MenuMinhaConta/>
+            </Box>
+            <Box w={"7vw"} display={"flex"} flexDir={"column"} justifyContent={"center"}>
+                <Carrinho/>
             </Box>
         </Box>
-        <Box w={"10vw"} display={"flex"} flexDir={"column"} justifyContent={"center"}>
-            <MenuInstitucional/>
-        </Box>
-        <Box w={"10vw"} display={"flex"} flexDir={"column"} justifyContent={"center"}>
-            <MenuMinhaConta/>
+        <Box>
+            <ListaSubmenus/>
         </Box>
     </Box>
   )
