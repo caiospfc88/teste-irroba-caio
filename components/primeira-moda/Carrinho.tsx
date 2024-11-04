@@ -7,7 +7,7 @@ const Carrinho = () => {
     <Box>
         <Popover>
         <PopoverTrigger>
-        <Box w={"5.5rem"} h={"3.5rem"} borderRadius={"10px"} bgColor={"#7DE3B0"} 
+        <Box w={"6rem"} h={"3rem"} borderRadius={"10px"} bgColor={"#7DE3B0"} 
         display={"flex"} justifyContent={"center"} flexDir={"row"} cursor={"pointer"}
         >
             <Box fontSize={"35px"} display={"flex"} justifyContent={"center"} flexDir={"column"} color={"snow"}

@@ -10,10 +10,10 @@ const ListaSubmenus = () => {
     const [isSubmenuOpen, setIsSubmenuOpen] = useState<number | null>(null); 
 
     return (
-        <Box w={"100vw"} h={"2vw"} bgColor="#F8F6F2" display={"flex"} justifyContent={"center"}>
-            <HStack as="ul" spacing={8}>
+        <Box w={"100%"} h={"2vw"} bgColor="#F8F6F2" display={"flex"} justifyContent={"center"}>
+            <HStack spacing={8}>
                 {opcoesSubmenu.map((itemMenu) => (
-                    <Box key={itemMenu.id.toString()} position="relative">
+                    <Box key={itemMenu.id.toString()}>
                         <Menu>
                             <MenuButton as={Box} bgColor={"transparent"} cursor={"pointer"}>
                                 <Box display={"flex"} flexDir={"row"} color={"#7DE3B0"} gap={"5px"} fontSize={"1.1rem"} fontWeight={"500"}>
@@ -24,48 +24,57 @@ const ListaSubmenus = () => {
                                 </Box>
                             </MenuButton>
 
-                            <MenuList p={0}>
-                                <Box display={"flex"} flexDir={"column"}>
-                                    {itemMenu.opcoes.map((subItem) => (
-                                        <MenuItem
-                                            minH="48px"
-                                            key={subItem.id}
-                                            as={Box}
-                                            cursor={"pointer"}
-                                            position="relative"
-                                            onMouseEnter={() => setIsSubmenuOpen(subItem.id)}
-                                            onMouseLeave={() => setIsSubmenuOpen(null)}
-                                        >
-                                            <Box display={"flex"} flexDir={"row"} color={"#69593C"}>
-                                                {subItem.label}
-                                                <Box fontSize={"10px"} display={"flex"} justifyContent={"center"} flexDir={"column"} ml={"8px"}>
-                                                    <FaChevronRight />
-                                                </Box>
-                                            </Box>
-                                            <Box w={"10vw"} position={"relative"}>
-                                            {/* Submenu */}
-                                            {isSubmenuOpen === subItem.id && (
-                                                <Box
-                                                    position="absolute"
-                                                    left="10%" // Posiciona o submenu à direita do item principal
-                                                    top="0"
-                                                    bg="white"
-                                                    zIndex="dropdown"
-                                                    minWidth="150px"
-                                                    p="4"
+                            <MenuList p={0} >
+                                <Box display={"flex"} flexDir={"row"} border={"none"} borderRadius={"10px"}>
+                                    <Box display={"flex"} flexDir={"column"} minH="148px">
+                                        {itemMenu.opcoes.map((subItem) => (
+                                            <MenuItem
+                                                minH="48px"
+                                                key={subItem.id}
+                                                as={Box}
+                                                cursor={"pointer"}
+                                                onMouseEnter={() => setIsSubmenuOpen(subItem.id)}
+                                                onMouseLeave={() => setIsSubmenuOpen(null)}
+                                                borderLeftRadius={"10px"}
+                                            >
+                                                <Box display={"flex"} flexDir={"row"} color={"#69593C"} 
+                                                _hover={{color: "#7DE3B0"}}
+                                                >
+                                                    {subItem.label}
+                                                    <Box fontSize={"10px"} display={"flex"} position="relative" 
+                                                    justifyContent={"center"} flexDir={"column"} ml={"8px"}
                                                     onMouseEnter={() => setIsSubmenuOpen(subItem.id)}
                                                     onMouseLeave={() => setIsSubmenuOpen(null)}
-                                                >
-                                                    {subItem.opcoesfinais.map((opcaoFinal) => (
-                                                        <Text key={opcaoFinal.id} p={2} _hover={{ bg: "gray.100" }}>
-                                                            {opcaoFinal.label}
-                                                        </Text>
-                                                    ))}
+                                                    _hover={{color: "#7DE3B0"}}
+                                                    >
+                                                        <FaChevronRight />
+                                                    </Box>
                                                 </Box>
-                                            )}
-                                            </Box>
-                                        </MenuItem>
-                                    ))}
+                                                <Box w={"12vw"} borderLeftRadius={"10px"}>
+                                                {/* Submenu */}
+                                                {isSubmenuOpen === subItem.id && (
+                                                    <Box w={"100%"} borderLeftRadius={"10px"} ml={"1.8rem"}>
+                                                        {subItem.opcoesfinais.map((opcaoFinal) => (
+                                                            <Text key={opcaoFinal.id} color={"#7DE3B0"} p={2} _hover={{ bg: "transparent" }}>
+                                                                {opcaoFinal.label}
+                                                            </Text>
+                                                        ))}
+                                                    </Box>
+                                                )}
+                                                </Box>
+                                            </MenuItem>
+
+                                        ))}
+                                    </Box>
+                                    <Box 
+                                    w="25vh"
+                                    backgroundImage={`url(${itemMenu.imagem})`}
+                                    backgroundSize="cover"
+                                    backgroundPosition="center" // centraliza a imagem
+                                    backgroundRepeat="no-repeat" // evita repetição da imagem
+                                    borderRightRadius={"10px"}
+                                    >
+                                    </Box>
                                 </Box>
                             </MenuList>
                         </Menu>
