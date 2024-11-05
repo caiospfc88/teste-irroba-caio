@@ -13,9 +13,9 @@ const TopMenu = () => {
 
   return (
     <Box>
-        <Box bgColor="#F8F6F2" pb={"1rem"}>
+        <Box bgColor="#F8F6F2" pb={"1rem"} w={"100vw"}>
             <Box display={"flex"} flexDir={"row"} justifyContent={"center"}
-            w="100%" h="17vh" bgColor="#F8F6F2" gap={"1.5%"}
+            w="100vw" h="17vh" bgColor="#F8F6F2" gap={"1.5%"}
             >
                 <Box display={"flex"} flexDir={"column"} h={"100%"} justifyContent={"center"}>
                     <Image src={"/images/logo_primeira_moda.png"} alt='Logo Primeira Moda' width={216} height={96}/>  

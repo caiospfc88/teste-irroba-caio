@@ -4,6 +4,8 @@ import Banner from "@/components/primeira-moda/Banner";
 import BannerPagamentos from "@/components/primeira-moda/BannerPagamentos";
 import BannerCategorias from "@/components/primeira-moda/BannerCategorias";
 import Destaques from "@/components/primeira-moda/Destaques";
+import Newsletter from "@/components/primeira-moda/Newsletter";
+import RodapeCategorias from "@/components/primeira-moda/RodapeCategorias";
 
 export default function Home() {
   return (
@@ -13,6 +15,8 @@ export default function Home() {
       <BannerPagamentos/>
       <BannerCategorias/>
       <Destaques/>
+      <Newsletter/>
+      <RodapeCategorias/>
     </Box>
   );
 }

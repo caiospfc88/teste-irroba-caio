@@ -10,7 +10,7 @@ const ListaSubmenus = () => {
     const [isSubmenuOpen, setIsSubmenuOpen] = useState<number | null>(null); 
 
     return (
-        <Box w={"100%"} h={"2vw"} bgColor="#F8F6F2" display={"flex"} justifyContent={"center"}>
+        <Box w={"100vw"} h={"2vw"} bgColor="#F8F6F2" display={"flex"} justifyContent={"center"}>
             <HStack spacing={8}>
                 {opcoesSubmenu.map((itemMenu) => (
                     <Box key={itemMenu.id.toString()}>
@@ -50,10 +50,15 @@ const ListaSubmenus = () => {
                                                         <FaChevronRight />
                                                     </Box>
                                                 </Box>
-                                                <Box w={"12vw"} borderLeftRadius={"10px"}>
-                                                {/* Submenu */}
+                                                {subItem.opcoesfinais == null ?
+                                                    <Box w={"12vw"}>
+
+                                                    </Box>
+                                                    :
+                                                    <Box w={"12vw"} borderLeftRadius={"10px"}>
+                                                
                                                 {isSubmenuOpen === subItem.id && (
-                                                    <Box w={"100%"} borderLeftRadius={"10px"} ml={"1.8rem"}>
+                                                    <Box w={"100vw"} borderLeftRadius={"10px"} ml={"1.8rem"}>
                                                         {subItem.opcoesfinais.map((opcaoFinal) => (
                                                             <Text key={opcaoFinal.id} color={"#7DE3B0"} p={2} _hover={{ bg: "transparent" }}>
                                                                 {opcaoFinal.label}
@@ -62,6 +67,8 @@ const ListaSubmenus = () => {
                                                     </Box>
                                                 )}
                                                 </Box>
+                                                }
+                                                
                                             </MenuItem>
 
                                         ))}
