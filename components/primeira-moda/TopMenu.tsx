@@ -45,7 +45,7 @@ const TopMenu = () => {
                     <Carrinho/>
                 </Box>
             </Box>
-            <Box mt={"1rem"} bgColor="#F8F6F2">
+            <Box bgColor="#F8F6F2">
                 <ListaSubmenus/>
             </Box>  
         </Box>

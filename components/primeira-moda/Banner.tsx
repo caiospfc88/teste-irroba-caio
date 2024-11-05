@@ -1,5 +1,5 @@
 "use client"
-import { Box, Tab, TabList, TabPanel, TabPanels, Tabs, Image } from '@chakra-ui/react'
+import { Box, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react'
 import React, { useState } from 'react'
 
 const Banner = () => {
@@ -8,7 +8,7 @@ const Banner = () => {
 
   return (
     <Box display={"flex"} w={"100vw"}>
-      <Tabs defaultIndex={1} p={0} as={Box} onChange={(index) => setSelectedIndex(index)}>
+      <Tabs defaultIndex={1} p={0} as={Box} onChange={(index) => setSelectedIndex(index)} border={"transparent"}>
         <TabPanels>
           <TabPanel as={Box}
           w={"100vw"}

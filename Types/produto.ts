@@ -1,0 +1,133 @@
+export type produto = {
+    id: number;
+    nome: string;
+    descricao: string;
+    preco: number;
+    precoPromocao: number;
+    cores: string[];
+    imagens: string[];
+    desconto: string;
+}
+
+export const listaProdutos: Array<produto> = [
+    {
+        id: 0,
+        nome: "Kit Bodies manga longa carters 4 peças",
+        descricao: "O Kit Bodies Manga Longa Basics Carters 4 peças é produzido em algodão com tecido leve e macio. O kit é composto por quatro bodies lisos e básicos. Os bodies possuem ombros expansíveis, que facilitam o vestir da peça, mangas longas e fechamento entrepernas com botões de pressão niquel-free. Delicados o Kit deixará seu pequeno pronto para qualquer ocasião.",
+        preco: 114.90,
+        precoPromocao: 75.90,
+        cores: ["Branco","Azul","Cinza","Preto","Multi"],
+        imagens: ["/images/kit-body-4-pecas-carter.png"],
+        desconto: "34% OFF",
+    },
+    {
+        id: 1,
+        nome: "Kit Bodies manga longa carters 4 peças",
+        descricao: "O Kit Bodies Manga Longa Basics Carters 4 peças é produzido em algodão com tecido leve e macio. O kit é composto por quatro bodies lisos e básicos. Os bodies possuem ombros expansíveis, que facilitam o vestir da peça, mangas longas e fechamento entrepernas com botões de pressão niquel-free. Delicados o Kit deixará seu pequeno pronto para qualquer ocasião.",
+        preco: 114.90,
+        precoPromocao: 75.90,
+        cores: ["Branco","Azul","Cinza","Preto","Multi"],
+        imagens: ["/images/kit-body-4-pecas-carter.png"],
+        desconto: "34% OFF",
+    },
+    {
+        id: 2,
+        nome: "Kit Bodies manga longa carters 4 peças",
+        descricao: "O Kit Bodies Manga Longa Basics Carters 4 peças é produzido em algodão com tecido leve e macio. O kit é composto por quatro bodies lisos e básicos. Os bodies possuem ombros expansíveis, que facilitam o vestir da peça, mangas longas e fechamento entrepernas com botões de pressão niquel-free. Delicados o Kit deixará seu pequeno pronto para qualquer ocasião.",
+        preco: 114.90,
+        precoPromocao: 75.90,
+        cores: ["Branco","Azul","Cinza","Preto","Multi"],
+        imagens: ["/images/kit-body-4-pecas-carter.png"],
+        desconto: "34% OFF",
+    },
+    {
+        id: 3,
+        nome: "Kit Bodies manga longa carters 4 peças",
+        descricao: "O Kit Bodies Manga Longa Basics Carters 4 peças é produzido em algodão com tecido leve e macio. O kit é composto por quatro bodies lisos e básicos. Os bodies possuem ombros expansíveis, que facilitam o vestir da peça, mangas longas e fechamento entrepernas com botões de pressão niquel-free. Delicados o Kit deixará seu pequeno pronto para qualquer ocasião.",
+        preco: 114.90,
+        precoPromocao: 75.90,
+        cores: ["Branco","Azul","Cinza","Preto","Multi"],
+        imagens: ["/images/kit-body-4-pecas-carter.png"],
+        desconto: "34% OFF",
+    },
+    {
+        id: 4,
+        nome: "Kit Bodies manga longa carters 4 peças",
+        descricao: "O Kit Bodies Manga Longa Basics Carters 4 peças é produzido em algodão com tecido leve e macio. O kit é composto por quatro bodies lisos e básicos. Os bodies possuem ombros expansíveis, que facilitam o vestir da peça, mangas longas e fechamento entrepernas com botões de pressão niquel-free. Delicados o Kit deixará seu pequeno pronto para qualquer ocasião.",
+        preco: 114.90,
+        precoPromocao: 75.90,
+        cores: ["Branco","Azul","Cinza","Preto","Multi"],
+        imagens: ["/images/kit-body-4-pecas-carter.png"],
+        desconto: "34% OFF",
+    },
+    {
+        id: 5,
+        nome: "Kit Bodies manga longa carters 4 peças",
+        descricao: "O Kit Bodies Manga Longa Basics Carters 4 peças é produzido em algodão com tecido leve e macio. O kit é composto por quatro bodies lisos e básicos. Os bodies possuem ombros expansíveis, que facilitam o vestir da peça, mangas longas e fechamento entrepernas com botões de pressão niquel-free. Delicados o Kit deixará seu pequeno pronto para qualquer ocasião.",
+        preco: 114.90,
+        precoPromocao: 75.90,
+        cores: ["Branco","Azul","Cinza","Preto","Multi"],
+        imagens: ["/images/kit-body-4-pecas-carter.png"],
+        desconto: "34% OFF",
+    },
+    {
+        id: 6,
+        nome: "Kit Bodies manga longa carters 4 peças",
+        descricao: "O Kit Bodies Manga Longa Basics Carters 4 peças é produzido em algodão com tecido leve e macio. O kit é composto por quatro bodies lisos e básicos. Os bodies possuem ombros expansíveis, que facilitam o vestir da peça, mangas longas e fechamento entrepernas com botões de pressão niquel-free. Delicados o Kit deixará seu pequeno pronto para qualquer ocasião.",
+        preco: 114.90,
+        precoPromocao: 75.90,
+        cores: ["Branco","Azul","Cinza","Preto","Multi"],
+        imagens: ["/images/kit-body-4-pecas-carter.png"],
+        desconto: "34% OFF",
+    },
+    {
+        id: 7,
+        nome: "Kit Bodies manga longa carters 4 peças",
+        descricao: "O Kit Bodies Manga Longa Basics Carters 4 peças é produzido em algodão com tecido leve e macio. O kit é composto por quatro bodies lisos e básicos. Os bodies possuem ombros expansíveis, que facilitam o vestir da peça, mangas longas e fechamento entrepernas com botões de pressão niquel-free. Delicados o Kit deixará seu pequeno pronto para qualquer ocasião.",
+        preco: 114.90,
+        precoPromocao: 75.90,
+        cores: ["Branco","Azul","Cinza","Preto","Multi"],
+        imagens: ["/images/kit-body-4-pecas-carter.png"],
+        desconto: "34% OFF",
+    },
+    {
+        id: 8,
+        nome: "Kit Bodies manga longa carters 4 peças",
+        descricao: "O Kit Bodies Manga Longa Basics Carters 4 peças é produzido em algodão com tecido leve e macio. O kit é composto por quatro bodies lisos e básicos. Os bodies possuem ombros expansíveis, que facilitam o vestir da peça, mangas longas e fechamento entrepernas com botões de pressão niquel-free. Delicados o Kit deixará seu pequeno pronto para qualquer ocasião.",
+        preco: 114.90,
+        precoPromocao: 75.90,
+        cores: ["Branco","Azul","Cinza","Preto","Multi"],
+        imagens: ["/images/kit-body-4-pecas-carter.png"],
+        desconto: "34% OFF",
+    },
+    {
+        id: 9,
+        nome: "Kit Bodies manga longa carters 4 peças",
+        descricao: "O Kit Bodies Manga Longa Basics Carters 4 peças é produzido em algodão com tecido leve e macio. O kit é composto por quatro bodies lisos e básicos. Os bodies possuem ombros expansíveis, que facilitam o vestir da peça, mangas longas e fechamento entrepernas com botões de pressão niquel-free. Delicados o Kit deixará seu pequeno pronto para qualquer ocasião.",
+        preco: 114.90,
+        precoPromocao: 75.90,
+        cores: ["Branco","Azul","Cinza","Preto","Multi"],
+        imagens: ["/images/kit-body-4-pecas-carter.png"],
+        desconto: "34% OFF",
+    },
+    {
+        id: 10,
+        nome: "Kit Bodies manga longa carters 4 peças",
+        descricao: "O Kit Bodies Manga Longa Basics Carters 4 peças é produzido em algodão com tecido leve e macio. O kit é composto por quatro bodies lisos e básicos. Os bodies possuem ombros expansíveis, que facilitam o vestir da peça, mangas longas e fechamento entrepernas com botões de pressão niquel-free. Delicados o Kit deixará seu pequeno pronto para qualquer ocasião.",
+        preco: 114.90,
+        precoPromocao: 75.90,
+        cores: ["Branco","Azul","Cinza","Preto","Multi"],
+        imagens: ["/images/kit-body-4-pecas-carter.png"],
+        desconto: "34% OFF",
+    },
+    {
+        id: 11,
+        nome: "Kit Bodies manga longa carters 4 peças",
+        descricao: "O Kit Bodies Manga Longa Basics Carters 4 peças é produzido em algodão com tecido leve e macio. O kit é composto por quatro bodies lisos e básicos. Os bodies possuem ombros expansíveis, que facilitam o vestir da peça, mangas longas e fechamento entrepernas com botões de pressão niquel-free. Delicados o Kit deixará seu pequeno pronto para qualquer ocasião.",
+        preco: 114.90,
+        precoPromocao: 75.90,
+        cores: ["Branco","Azul","Cinza","Preto","Multi"],
+        imagens: ["/images/kit-body-4-pecas-carter.png"],
+        desconto: "34% OFF",
+    },
+]
