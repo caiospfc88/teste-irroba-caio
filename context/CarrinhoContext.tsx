@@ -52,11 +52,10 @@ export const CarrinhoProvider = ({ children }:CarrinhoProviderT) => {
 
 const removerItem = (index: number) => {
     const carrinhoAtual = [...carrinho];
-    carrinhoAtual.splice(index, 1);
-
-    setCarrinho(carrinhoAtual);
-    atualizarTotalCarrinho(carrinhoAtual);
-    localStorage.setItem('carrinho', JSON.stringify(carrinhoAtual));
+    const temp = carrinhoAtual.splice(index, 1);
+    setCarrinho(temp);
+    atualizarTotalCarrinho(temp);
+    localStorage.setItem('carrinho', JSON.stringify(temp));
 };
 
   return (
