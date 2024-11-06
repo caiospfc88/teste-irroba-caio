@@ -5,10 +5,16 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import { FaRegHeart } from 'react-icons/fa6'
 import { PiEye } from 'react-icons/pi'
+import { useRouter } from 'next/navigation'
 
 const Destaques = () => {
 
   const [itemHover,setItemHover] = useState<number | null>(null);
+  const router = useRouter();
+
+  const irParaCompraProduto = (id:number) => {
+    router.push(`/produto/${id}`);
+  };
 
   return (
     <Box pb={"2vw"} bgColor="#F8F6F2">
@@ -36,7 +42,7 @@ const Destaques = () => {
               cursor={"pointer"}
               bgColor="#FBFAF8"
               w="100%"
-              h={{ base: 'auto', md: '500px', lg: '622px' }}
+              h={{ base: 'auto', md: '500px', lg: '700px' }}
               border="2px solid #FCF6B3"
               borderRadius="10px"
               p="1rem" position={"relative"}
@@ -45,10 +51,12 @@ const Destaques = () => {
             >
               
               <Box display={"flex"} position={"absolute"} zIndex={2} w={"100%"} h={"100%"}
-              flexDir={"column"} left={0} top={"10vw"}
+              flexDir={"column"} left={0} top={"9vw"}
               >
                 <Box display={"flex"} justifyContent={"center"}>
-                  <Button bgColor={"#7DE3B0"} color={"#FFFFFF"}>Que fofo, eu quero!</Button>
+                  <Button bgColor={"#7DE3B0"} color={"#FFFFFF"} onClick={()=>irParaCompraProduto(item.id)}>
+                    Que fofo, eu quero!
+                  </Button>
                 </Box>
                 <Box display={"flex"} justifyContent={"center"} mt={"8vw"} gap={"1.5vw"}>
                   <Box fontSize={"2vw"} color={"#69593C"}
@@ -109,7 +117,7 @@ const Destaques = () => {
               cursor={"pointer"}
               bgColor="#FBFAF8"
               w="100%"
-              h={{ base: 'auto', md: '500px', lg: '622px' }}
+              h={{ base: 'auto', md: '500px', lg: '700px' }}
               border="2px solid #F6F3EF"
               borderRadius="10px"
               p="1rem"
