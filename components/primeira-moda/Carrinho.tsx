@@ -15,7 +15,7 @@ export interface ProdutoCarrinho {
 
 const Carrinho = () => {
     
-    const { carrinho, adicionaCarrinho, removerItem, total } = useCarrinho();
+    const { carrinho, removerItem, total } = useCarrinho();
 
     return (
         <Box>
@@ -53,7 +53,7 @@ const Carrinho = () => {
                                     </Box>
                                     <Box>
                                         <Button color={"#69593C"} size="xs" ml={"0.5vw"} bgColor={"transparent"}
-                                        onClick={() => removerItem(item.id)} fontSize={"1.5vws"} w={"2vw"} p={0}
+                                        onClick={() => removerItem(index)} fontSize={"1.5vws"} w={"2vw"} p={0}
                                         _hover={{bgColor: "red",color: "snow", transform: "scale(1.1)", transition:"0.8s"}}
                                         >
                                             <RiCloseFill />
