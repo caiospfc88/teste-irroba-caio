@@ -1,6 +1,7 @@
 "use client"
+import { ItemCarrinho, useCarrinho } from '@/context/CarrinhoContext';
 import { listaProdutos } from '@/Types/produto';
-import { Box, Button, Grid, GridItem, NumberInput, NumberInputField } from '@chakra-ui/react'
+import { Box, Button, Grid, GridItem, NumberInput, NumberInputField, useToast } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { FaChevronRight } from 'react-icons/fa';
 import { FaMinus, FaPlus } from 'react-icons/fa6';
@@ -13,16 +14,39 @@ interface CompraProdutoI {
 
 const CompraProduto = ({id}: CompraProdutoI) => {
 
+    const { carrinho, adicionaCarrinho, removerItem, total } = useCarrinho();
+
     const produtoParam = listaProdutos.filter((item) => item.id == id)
     const [selectedImage,setSelectedImage] = useState<string>(produtoParam[0].imagens[0])
     const [gridImages, setGridImages] = useState<Array<string>>([""])
     const [quantidade, setQuantidade] = useState<number>(1)
+
+    const toast = useToast()
     
     useEffect(()=>{
         const temp = produtoParam[0].imagens.filter((item) => item !== selectedImage)
         setGridImages(temp)
     },[selectedImage])
 
+    const handleAdicionaItemCarrinho = () => {
+        const produto: ItemCarrinho = {
+            id: produtoParam[0].id,
+            nome: produtoParam[0].nome,
+            preco: produtoParam[0].precoPromocao,
+            imagem: produtoParam[0].imagens[0]
+        }
+        
+        adicionaCarrinho(produto, quantidade);
+    
+        toast(
+            {
+            title: 'Produto adicionado ao carrinho!',
+            status: "success",
+            description: "Para finalizar a compra, abra o carrinho e clique em comprar",
+            duration: 4000
+            }
+        );
+    };
 
   return (
     <Box mt={"5vh"}>
@@ -95,24 +119,33 @@ const CompraProduto = ({id}: CompraProdutoI) => {
                         <Box fontSize={"2.2vw"} color={"#1059E6"} fontWeight={700}>
                             {produtoParam[0].precoPromocao.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
                         </Box>
-                        <Box color={"#999999"} mt={"3vh"} display={"flex"} gap={"0.3vw"}>
-                            <Box mt={"0.5vh"}>3X de</Box> 
-                            <Box color={"#7DE3B0"} fontWeight={700} fontSize={"1vw"}>
-                                {(produtoParam[0].precoPromocao / 3).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
-                            </Box> 
-                            <Box mt={"0.5vh"}>Sem juros</Box>
+                        <Box color={"#999999"} display={"flex"} flexDir={"column"} justifyContent={"end"}>
+                            <Box display={"flex"} gap={"0.4vw"} mb={"1vh"}>
+                                <Box display={"flex"} flexDir={"column"} justifyContent={"center"}>
+                                    3X de
+                                </Box> 
+                                <Box color={"#7DE3B0"} fontWeight={700} fontSize={"1vw"} display={"flex"} 
+                                flexDir={"column"} justifyContent={"center"}
+                                >
+                                    {(produtoParam[0].precoPromocao / 3).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+                                </Box> 
+                                <Box display={"flex"} flexDir={"column"} justifyContent={"center"}
+                                >
+                                    Sem juros
+                                </Box>
+                            </Box>
                         </Box>
                         <Box mt={"1.5vh"} ml={"0.2vw"}>
-                            <Button bgColor={"transparent"} color={"#999999"} border={"2px solid #999999"}>
+                            <Button bgColor={"transparent"} color={"#999999"} border={"2px solid #999999"} size={"xs"}>
                                 Ver meios de pagamento
                             </Button>
                         </Box>
                     </Box>
-                    <Box display={"flex"} flexDir={"row"} gap={"0.5vw"} mt={"0.5vh"}>
+                    <Box display={"flex"} flexDir={"row"} gap={"0.5vw"} mt={"1vh"}>
                         <Box gap={"5vw"} color={"#999999"}>
                             Tamanho: {produtoParam[0].tamanho.map((item,index)=>(
                                 <Button key={index} bgColor={"#7DE3B0"} color={"#FFFFFF"} mr={"0.2vw"}
-                                w={"1.8vw"}
+                                w={"1.8vw"} size={"xs"}
                                 >
                                     {item}
                                 </Button>
@@ -121,7 +154,7 @@ const CompraProduto = ({id}: CompraProdutoI) => {
                         <Box gap={"5vw"} color={"#999999"}>
                             Cores: {produtoParam[0].cores.map((item)=>(
                                 <Button key={item.id} bgColor={item.buttonColor} color={item.textButtonColor} mr={"0.2vw"}
-                                border={`1px solid ${item.borderButtonColor}`}
+                                border={`1px solid ${item.borderButtonColor}`} size={"xs"}
                                 >
                                     {item.nome}
                                 </Button>
@@ -129,19 +162,32 @@ const CompraProduto = ({id}: CompraProdutoI) => {
                         </Box>
                     </Box>
                     <Box display={"flex"} flexDir={"row"} gap={"2.5vw"} mt={"2.5vh"}>
-                        <Box w={"15.2vw"} p={"0.8vw"} border={"2px solid #999999"} color={"#999999"} fontSize={"1vw"} borderRadius={"1vw"}
+                        <Box w={"15.5vw"} h={"10vh"} p={"0.8vw"} border={"2px solid #999999"} color={"#999999"} fontSize={"1vw"} borderRadius={"0.6vw"}
                         display={"flex"}>
-                            <Box pr={"1vw"} mt={"0.2vw"}>Quantidade</Box> 
-                            <Box borderLeft={"2px solid #999999"} display={"flex"} gap={"0.5vw"}>
-                                <Box pl={"1vw"} mt={"0.5vw"} cursor={"pointer"} onClick={()=> ( quantidade > 0 ? setQuantidade(quantidade - 1) : setQuantidade(0))}> <FaMinus /> </Box>
-                                <NumberInput color={"#999999"} min={0} max={99} onChange={(val) => setQuantidade(parseFloat(val) || 0)} value={quantidade} border={"none"}>
-                                <NumberInputField p={"1vw"}/>
-                                </NumberInput> 
-                                <Box mt={"0.5vw"} cursor={"pointer"} onClick={()=>( quantidade < 99 ? setQuantidade(quantidade + 1) : setQuantidade(99))}><FaPlus /></Box>
+                            <Box pr={"1vw"} display={"flex"} flexDir={"column"} justifyContent={"center"}>Quantidade</Box>
+                            <Box display={"flex"} flexDir={"column"} justifyContent={"center"}> 
+                                <Box borderLeft={"2px solid #999999"} display={"flex"} gap={"0.5vw"}>
+                                    <Box pl={"1vw"} cursor={"pointer"} onClick={()=> ( quantidade > 0 ? setQuantidade(quantidade - 1) : setQuantidade(0))}
+                                    display={"flex"} flexDir={"column"} justifyContent={"center"}
+                                    > 
+                                        <FaMinus /> 
+                                    </Box>
+                                    <NumberInput color={"#999999"} min={0} max={99} onChange={(val) => setQuantidade(parseFloat(val) || 0)} 
+                                    value={quantidade} border={"none"} minW={"3.5vw"} h={"8vh"} display={"flex"} flexDir={"column"} justifyContent={"center"}
+                                    >
+                                        <NumberInputField p={"1vw"} minW={"2vw"}/>
+                                    </NumberInput> 
+                                    <Box cursor={"pointer"} onClick={()=>( quantidade < 99 ? setQuantidade(quantidade + 1) : setQuantidade(99))}
+                                    display={"flex"} flexDir={"column"} justifyContent={"center"}
+                                    >
+                                        <FaPlus />
+                                    </Box>
+                                </Box>
                             </Box>
                         </Box>
-                        <Box >
-                            <Button w={"16vw"} h={"7.8vh"} bgColor={"#1059E6"} color={"#FFFFFF"} fontSize={"1.2vw"}>
+                        <Box display={"flex"} flexDir={"column"} justifyContent={"center"}>
+                            <Button onClick={handleAdicionaItemCarrinho} w={"16vw"} h={"7.8vh"} bgColor={"#1059E6"} 
+                            color={"#FFFFFF"} fontSize={"1.2vw"}>
                                 <Box mr={"0.5vw"} fontSize={"1.8vw"}>
                                     <TiShoppingCart />
                                 </Box>

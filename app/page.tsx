@@ -8,11 +8,14 @@ import Newsletter from "@/components/primeira-moda/Newsletter";
 import RodapeCategorias from "@/components/primeira-moda/RodapeCategorias";
 import BannerRedeSocial from "@/components/primeira-moda/BannerRedeSocial";
 import BannerPagamentosRodape from "@/components/primeira-moda/BannerPagamentosRodape";
+import { CarrinhoProvider } from "@/context/CarrinhoContext";
 
 export default function Home() {
   return (
     <Box>
-      <TopMenu/>
+      <CarrinhoProvider>
+        <TopMenu/>
+      </CarrinhoProvider>  
       <Banner/>
       <BannerPagamentos/>
       <BannerCategorias/>

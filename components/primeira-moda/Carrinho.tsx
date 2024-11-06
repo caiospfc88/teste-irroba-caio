@@ -1,45 +1,84 @@
-import { Box, Button, Popover, PopoverArrow, PopoverBody, PopoverContent, PopoverFooter, PopoverTrigger, Text } from '@chakra-ui/react'
-import React from 'react'
+"use client"
+import { useCarrinho } from '@/context/CarrinhoContext';
+import { Box, Button, Popover, PopoverArrow, PopoverBody, PopoverContent, PopoverFooter, PopoverTrigger, Text } from '@chakra-ui/react';
+import React from 'react';
 import { GiShoppingCart } from "react-icons/gi";
+import { RiCloseFill } from "react-icons/ri";
 
-const Carrinho = () => {
-  return (
-    <Box>
-        <Popover>
-        <PopoverTrigger>
-        <Box w={"6rem"} h={"3rem"} borderRadius={"10px"} bgColor={"#7DE3B0"} 
-        display={"flex"} justifyContent={"center"} flexDir={"row"} cursor={"pointer"}
-        >
-            <Box fontSize={"35px"} display={"flex"} justifyContent={"center"} flexDir={"column"} color={"snow"}
-            w={"50%"}
-            >
-                <GiShoppingCart/>
-            </Box>
-            <Box display={"flex"} justifyContent={"center"} flexDir={"column"}>
-                <Box borderRadius={"50%"} fontSize={"20px"} display={"flex"} justifyContent={"center"} flexDir={"column"}
-                bgColor={"#FCF6B3"} w={"2rem"} h={"2rem"} textAlign={"center"}
-                >
-                    <Text color={"#7DE3B0"}>3</Text>
-                </Box>
-            </Box>
-        </Box>
-        </PopoverTrigger>
-        <PopoverContent w={280}>
-            <PopoverArrow />
-            <PopoverBody></PopoverBody>
-            <PopoverFooter>
-                <Box display={"flex"} justifyContent={"space-between"} flexDir={"row"} color={"#69593C"}>
-                    Total <Text color={"#7DE3B0"} fontWeight={"bold"}>R$ 450,00</Text>
-                </Box>
-                <Box display={"flex"} justifyContent={"space-between"} mt={"5px"}>
-                    <Button bgColor={"#EAFAF2"} color={"#7DE3B0"}>Ver carrinho</Button>
-                    <Button bgColor={"#7DE3B0"} color={"snow"}>Comprar</Button>
-                </Box>
-            </PopoverFooter>
-        </PopoverContent>
-        </Popover>
-    </Box>
-  )
+export interface ProdutoCarrinho {
+    id: number;
+    nome: string;
+    preco: number;
+    quantidade: number;
+    imagem: string;
 }
 
-export default Carrinho
+const Carrinho = () => {
+    
+    const { carrinho, adicionaCarrinho, removerItem, total } = useCarrinho();
+
+    return (
+        <Box>
+            <Popover>
+                <PopoverTrigger>
+                    <Box w={"6rem"} h={"3rem"} borderRadius={"10px"} bgColor={"#7DE3B0"} 
+                         display={"flex"} justifyContent={"center"} flexDir={"row"} cursor={"pointer"}>
+                        <Box fontSize={"35px"} display={"flex"} justifyContent={"center"} flexDir={"column"} color={"snow"}
+                             w={"50%"}>
+                            <GiShoppingCart />
+                        </Box>
+                        <Box display={"flex"} justifyContent={"center"} flexDir={"column"}>
+                            <Box borderRadius={"50%"} fontSize={"20px"} display={"flex"} justifyContent={"center"} flexDir={"column"}
+                                 bgColor={"#FCF6B3"} w={"2rem"} h={"2rem"} textAlign={"center"}>
+                                <Text color={"#7DE3B0"}>{carrinho.length}</Text>
+                            </Box>
+                        </Box>
+                    </Box>
+                </PopoverTrigger>
+                
+                <PopoverContent w={300}>
+                    <PopoverArrow />
+                    <PopoverBody>
+                        {carrinho.length > 0 ? (
+                            carrinho.map((item, index) => (
+                                <Box key={index} display={"flex"} justifyContent={"space-between"} alignItems={"center"} mb={2}>
+                                    <Box>
+                                        <Text fontWeight={"bold"} color={"#69593C"}>{item.nome}</Text>
+                                        <Text fontSize={"sm"} color={"gray.500"}>
+                                            {item.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+                                        </Text>
+                                    </Box>
+                                    <Box display="flex" alignItems="center">
+                                        <img src={item.imagem} alt={item.nome} width={50} style={{ marginRight: "8px" }} />
+                                    </Box>
+                                    <Box>
+                                        <Button color={"#69593C"} size="xs" ml={"0.5vw"} bgColor={"transparent"}
+                                        onClick={() => removerItem(item.id)} fontSize={"1.5vws"} w={"2vw"} p={0}
+                                        _hover={{bgColor: "red",color: "snow", transform: "scale(1.1)", transition:"0.8s"}}
+                                        >
+                                            <RiCloseFill />
+                                        </Button>
+                                    </Box>
+                                </Box>
+                            ))
+                        ) : (
+                            <Text color="gray.500">Seu carrinho está vazio</Text>
+                        )}
+                    </PopoverBody>
+                    
+                    <PopoverFooter>
+                        <Box display={"flex"} justifyContent={"space-between"} flexDir={"row"} color={"#69593C"}>
+                            Total: <Text color={"#7DE3B0"} fontWeight={"bold"}>{total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</Text>
+                        </Box>
+                        <Box display={"flex"} justifyContent={"space-between"} mt={"5px"}>
+                            <Button bgColor={"#EAFAF2"} color={"#7DE3B0"}>Ver carrinho</Button>
+                            <Button bgColor={"#7DE3B0"} color={"snow"}>Comprar</Button>
+                        </Box>
+                    </PopoverFooter>
+                </PopoverContent>
+            </Popover>
+        </Box>
+    );
+};
+
+export default Carrinho;
