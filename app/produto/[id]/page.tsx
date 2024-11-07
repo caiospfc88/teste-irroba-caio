@@ -12,7 +12,6 @@ import RodapeCategorias from '@/components/primeira-moda/RodapeCategorias';
 import BannerRedeSocial from '@/components/primeira-moda/BannerRedeSocial';
 import BannerPagamentosRodape from '@/components/primeira-moda/BannerPagamentosRodape';
 import ProdutosRelacionados from '@/components/primeira-moda/ProdutosRelacionados';
-import Destaques from '@/components/primeira-moda/Destaques';
 
 const Produto = () => {
 
