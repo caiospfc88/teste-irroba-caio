@@ -41,7 +41,7 @@ const ListaSubmenus = () => {
                                                 _hover={{color: "#7DE3B0"}}
                                                 >
                                                     {subItem.label}
-                                                    <Box fontSize={"10px"} display={"flex"} position="relative" 
+                                                    {subItem.opcoesfinais? <Box fontSize={"10px"} display={"flex"} position="relative" 
                                                     justifyContent={"center"} flexDir={"column"} ml={"8px"}
                                                     onMouseEnter={() => setIsSubmenuOpen(subItem.id)}
                                                     onMouseLeave={() => setIsSubmenuOpen(null)}
@@ -49,6 +49,10 @@ const ListaSubmenus = () => {
                                                     >
                                                         <FaChevronRight />
                                                     </Box>
+                                                    :
+                                                    ""
+                                                    }
+                                                    
                                                 </Box>
                                                 {subItem.opcoesfinais == null ?
                                                     <Box w={"12vw"}>
