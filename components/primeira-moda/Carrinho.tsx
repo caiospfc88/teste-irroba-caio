@@ -4,6 +4,7 @@ import { Box, Button, Popover, PopoverArrow, PopoverBody, PopoverContent, Popove
 import React from 'react';
 import { GiShoppingCart } from "react-icons/gi";
 import { RiCloseFill } from "react-icons/ri";
+import Image from 'next/image';
 
 export interface ProdutoCarrinho {
     id: number;
@@ -15,7 +16,7 @@ export interface ProdutoCarrinho {
 
 const Carrinho = () => {
     
-    const { carrinho, adicionaCarrinho, removerItem, total } = useCarrinho();
+    const { carrinho, removerItem, total } = useCarrinho();
 
     return (
         <Box>
@@ -49,11 +50,11 @@ const Carrinho = () => {
                                         </Text>
                                     </Box>
                                     <Box display="flex" alignItems="center">
-                                        <img src={item.imagem} alt={item.nome} width={50} style={{ marginRight: "8px" }} />
+                                        <Image src={item.imagem} alt={item.nome} width={50} style={{ marginRight: "8px" }} />
                                     </Box>
                                     <Box>
                                         <Button color={"#69593C"} size="xs" ml={"0.5vw"} bgColor={"transparent"}
-                                        onClick={() => removerItem(item.id)} fontSize={"1.5vws"} w={"2vw"} p={0}
+                                        onClick={() => removerItem(index)} fontSize={"1.5vws"} w={"2vw"} p={0}
                                         _hover={{bgColor: "red",color: "snow", transform: "scale(1.1)", transition:"0.8s"}}
                                         >
                                             <RiCloseFill />

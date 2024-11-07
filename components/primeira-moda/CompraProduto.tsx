@@ -14,7 +14,7 @@ interface CompraProdutoI {
 
 const CompraProduto = ({id}: CompraProdutoI) => {
 
-    const { carrinho, adicionaCarrinho, removerItem, total } = useCarrinho();
+    const { adicionaCarrinho } = useCarrinho();
 
     const produtoParam = listaProdutos.filter((item) => item.id == id)
     const [selectedImage,setSelectedImage] = useState<string>(produtoParam[0].imagens[0])
