@@ -6,7 +6,7 @@ import Image from 'next/image'
 const BannerPagamentosRodape = () => {
   return (
     <Box>
-        <Box display={"flex"} justifyContent={"center"} mt={"3rem"} mb={"2rem"}>
+        <Box display={{base: "none", md: "flex"}} justifyContent={"center"} mt={"3rem"} mb={"2rem"}>
             <Box display={"flex"} justifyContent={"space-around"} flexDir={"row"} w={"70vw"}>
                 {bannerPagamentos.map((item)=>(
                     <Box key={item.id} display={"flex"} flexDir={"column"} color={"#69593C"} alignItems={"center"}>
@@ -23,7 +23,7 @@ const BannerPagamentosRodape = () => {
 
             </Box>        
         </Box>
-        <Box color={"#999999"} mt={"10vh"} ml={"14vw"} mb={"6vh"}>
+        <Box color={"#999999"} mt={"10vh"} ml={"14vw"} mb={"6vh"} display={{base: "none", md: "block"}}>
             <Text>Copyright Primeira Moda Roupas e Produtos Importados Ltda - 2020. Todos os direitos reservados.</Text>
         </Box>
     </Box>

@@ -22,13 +22,13 @@ const Carrinho = () => {
         <Box>
             <Popover>
                 <PopoverTrigger>
-                    <Box w={"6rem"} h={"3rem"} borderRadius={"10px"} bgColor={"#7DE3B0"} 
-                         display={"flex"} justifyContent={"center"} flexDir={"row"} cursor={"pointer"}>
-                        <Box fontSize={"35px"} display={"flex"} justifyContent={"center"} flexDir={"column"} color={"snow"}
-                             w={"50%"}>
+                    <Box w={{base: "3.5rem", md: "6rem"}} h={"3rem"} borderRadius={"10px"} bgColor={"#7DE3B0"} alignItems={"center"}
+                         display={"flex"} justifyContent={"center"} flexDir={{base: "column", md: "row"}} cursor={"pointer"}>
+                        <Box fontSize={{base: "15vh", md: "35px"}} display={"flex"} justifyContent={"center"} flexDir={{base: "row", md: "column"}} 
+                        color={"snow"} w={"50%"} fontWeight={700}>
                             <GiShoppingCart />
                         </Box>
-                        <Box display={"flex"} justifyContent={"center"} flexDir={"column"}>
+                        <Box display={{base: "none", md: "flex"}} justifyContent={"center"} flexDir={"column"}>
                             <Box borderRadius={"50%"} fontSize={"20px"} display={"flex"} justifyContent={"center"} flexDir={"column"}
                                  bgColor={"#FCF6B3"} w={"2rem"} h={"2rem"} textAlign={"center"}>
                                 <Text color={"#7DE3B0"}>{carrinho.length}</Text>

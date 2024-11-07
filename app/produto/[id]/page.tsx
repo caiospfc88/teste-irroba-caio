@@ -12,13 +12,14 @@ import RodapeCategorias from '@/components/primeira-moda/RodapeCategorias';
 import BannerRedeSocial from '@/components/primeira-moda/BannerRedeSocial';
 import BannerPagamentosRodape from '@/components/primeira-moda/BannerPagamentosRodape';
 import ProdutosRelacionados from '@/components/primeira-moda/ProdutosRelacionados';
+import RodapeMobile from '@/components/primeira-moda/RodapeMobile';
 
 const Produto = () => {
 
     const { id } = useParams();
 
   return (
-    <Box>
+    <Box display={"flex"}>
       <CarrinhoProvider>
         <TopMenu/>
         <CompraProduto id={Number(id)}/>
@@ -30,6 +31,7 @@ const Produto = () => {
       <RodapeCategorias/>
       <BannerRedeSocial/>
       <BannerPagamentosRodape/>
+      <RodapeMobile/>
     </Box>
   )
 }

@@ -173,7 +173,7 @@ const Destaques = () => {
         </Grid>
         <Box display={"flex"} justifyContent={"center"}>
           <Button color={"#FFFFFF"} bgColor={"#7DE3B0"} w={{ base: 'auto', md: '22vw' }} 
-          h={{base: "auto", 'md': "8vh"}} fontSize={{base: "6vw", 'md': "1.4rem"}} fontWeight={700}>
+          h={{base: "11vh", 'md': "8vh"}} fontSize={{base: "5vw", 'md': "1.4rem"}} fontWeight={700}>
             Ver todos os produtos
           </Button>
 

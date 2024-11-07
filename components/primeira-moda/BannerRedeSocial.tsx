@@ -3,7 +3,7 @@ import React from 'react'
 
 const BannerRedeSocial = () => {
   return (
-    <Box>
+    <Box display={{base: "none", md: "block"}}>
         <Box position='relative' padding='10'>
             <Divider size={"100px"}/>
             <AbsoluteCenter bg='white' px='4' display={"flex"} gap={"1vw"}>

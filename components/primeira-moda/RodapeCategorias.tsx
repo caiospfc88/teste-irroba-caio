@@ -5,7 +5,7 @@ import { HiChevronRight } from 'react-icons/hi2'
 
 const RodapeCategorias = () => {
   return (
-    <Box display={"flex"} justifyContent={"center"}>
+    <Box display={{base: "none" ,md: "flex"}} justifyContent={"center"}>
         <Grid
           templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)', xl: 'repeat(4, 1fr)' }}
           gap={12}
