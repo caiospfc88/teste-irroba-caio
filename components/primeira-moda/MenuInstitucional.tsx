@@ -7,7 +7,7 @@ import { IoStorefront } from "react-icons/io5";
 
 const MenuInstitucional = () => {
   return (
-    <Box color={"#69593C"}>
+    <Box color={"#69593C"} display={{ base: "none", md: "flex" }}>
         <Menu>
         <MenuButton as={Button} rightIcon={<IoIosArrowDown />} color={"#69593C"} bgColor={"transparent"}>
             Institucional

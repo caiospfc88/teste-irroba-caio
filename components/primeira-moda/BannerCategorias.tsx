@@ -7,7 +7,7 @@ const BannerCategorias = () => {
     const principaisCategorias = opcoesSubmenu.filter((item) => item.destaque === true)
 
   return (
-    <Box w={"100%"} flexDir={"column"} mt={"1rem"} mb={"5rem"}>
+    <Box w={"100%"} flexDir={"column"} mt={"1rem"} mb={"5rem"} display={{ base: "none", md: "flex" }}>
         <Box display={"flex"} justifyContent={"center"} color={"#69593C"} fontSize={"2.2rem"} fontWeight={700}>
             Categorias Principais
         </Box>

@@ -7,7 +7,7 @@ const Banner = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
-    <Box display={"flex"} w={"100vw"}>
+    <Box display={{ base: "none", md: "flex" }} w={"100vw"}>
       <Tabs defaultIndex={1} p={0} as={Box} onChange={(index) => setSelectedIndex(index)} border={"transparent"}>
         <TabPanels>
           <TabPanel as={Box}

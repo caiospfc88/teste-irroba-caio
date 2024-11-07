@@ -21,7 +21,7 @@ const MenuMinhaConta = () => {
 
     if (logado == true) {
         return (
-            <Box color={"#69593C"}>
+            <Box color={"#69593C"} display={{ base: "none", md: "flex" }}>
                 <Menu>
                 <MenuButton as={Button} rightIcon={<IoIosArrowDown />} color={"#69593C"} bgColor={"transparent"}>
                     Minha Conta
@@ -36,7 +36,7 @@ const MenuMinhaConta = () => {
           )
     } else {
         return (
-            <Box color={"#69593C"}>
+            <Box color={"#69593C"} display={{ base: "none", md: "flex" }}>
                 <Menu>
                 <MenuButton as={Button} rightIcon={<IoIosArrowDown />} color={"#69593C"} bgColor={"transparent"}>
                     Minha Conta

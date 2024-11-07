@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const BannerPagamentos = () => {
   return (
-    <Box display={"flex"} justifyContent={"center"} mt={"3rem"} mb={"2rem"}>
+    <Box display={{ base: "none", md: "flex" }} justifyContent={"center"} mt={"3rem"} mb={"2rem"}>
         <Box display={"flex"} justifyContent={"space-between"} flexDir={"row"} w={"70vw"}>
             {bannerPagamentos.map((item)=>(
                 <Box key={item.id} display={"flex"} flexDir={"row"} gap={"1rem"}>

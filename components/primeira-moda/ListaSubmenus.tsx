@@ -10,7 +10,7 @@ const ListaSubmenus = () => {
     const [isSubmenuOpen, setIsSubmenuOpen] = useState<number | null>(null); 
 
     return (
-        <Box w={"100vw"} h={"2vw"} bgColor="#F8F6F2" display={"flex"} justifyContent={"center"}>
+        <Box w={"100vw"} h={"2vw"} bgColor="#F8F6F2" display={{ base: "none", md: "flex" }} justifyContent={"center"}>
             <HStack spacing={8}>
                 {opcoesSubmenu.map((itemMenu) => (
                     <Box key={itemMenu.id.toString()}>
@@ -64,9 +64,9 @@ const ListaSubmenus = () => {
                                                 {isSubmenuOpen === subItem.id && (
                                                     <Box w={"100vw"} borderLeftRadius={"10px"} ml={"1.8rem"}>
                                                         {subItem.opcoesfinais.map((opcaoFinal) => (
-                                                            <Text key={opcaoFinal.id} color={"#7DE3B0"} p={2} _hover={{ bg: "transparent" }}>
+                                                            <Box key={opcaoFinal.id} color={"#7DE3B0"} p={2} _hover={{ bg: "transparent" }}>
                                                                 {opcaoFinal.label}
-                                                            </Text>
+                                                            </Box>
                                                         ))}
                                                     </Box>
                                                 )}
