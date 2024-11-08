@@ -50,7 +50,7 @@ const Carrinho = () => {
                                         </Text>
                                     </Box>
                                     <Box display="flex" alignItems="center">
-                                        <Image src={item.imagem} alt={item.nome} width={50} style={{ marginRight: "8px" }} />
+                                        <Image src={item.imagem} alt={item.nome} width={50} height={50} style={{ marginRight: "8px" }} />
                                     </Box>
                                     <Box>
                                         <Button color={"#69593C"} size="xs" ml={"0.5vw"} bgColor={"transparent"}
