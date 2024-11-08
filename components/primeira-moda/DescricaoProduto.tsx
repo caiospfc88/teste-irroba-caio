@@ -12,13 +12,29 @@ const DescricaoProduto = ({id}: DescricaoProdutoI) => {
 
   return (
     <Box color={"#999999"} display={"flex"} justifyContent={"center"}>
-        <Box w={"80vw"}>
-            <Tabs>
+        <Box w={{base: "92vw",md: "80vw"}} h={"auto"} mb={{base: "5vh", md: "0"}}>
+            <Tabs fontSize={{base: "2.4vw",md: "1.2vw"}}>
             <TabList>
-                <Tab  _selected={{color: "#69593C", fontWeight: "700"}}>Descrição</Tab>
-                <Tab  _selected={{color: "#69593C", fontWeight: "700"}}>Formas de pagamento</Tab>
-                <Tab  _selected={{color: "#69593C", fontWeight: "700"}}>Comentários</Tab>
-                <Tab  _selected={{color: "#69593C", fontWeight: "700"}}>Tabela de Medidas</Tab>
+                <Tab  _selected={{color: "#69593C", fontWeight: "700"}}
+                fontSize={{base: "2.5vw", md: "1.2vw"}}
+                >
+                    Descrição
+                </Tab>
+                <Tab  _selected={{color: "#69593C", fontWeight: "700"}}
+                fontSize={{base: "2.5vw", md: "1.2vw"}}
+                >
+                    Formas de pagamento
+                </Tab>
+                <Tab  _selected={{color: "#69593C", fontWeight: "700"}}
+                fontSize={{base: "2.5vw", md: "1.2vw"}}
+                >
+                    Comentários
+                </Tab>
+                <Tab  _selected={{color: "#69593C", fontWeight: "700"}}
+                fontSize={{base: "2.5vw", md: "1.2vw"}}
+                >
+                    Tabela de Medidas
+                </Tab>
             </TabList>
             <TabIndicator
             mt="-1.5px" 

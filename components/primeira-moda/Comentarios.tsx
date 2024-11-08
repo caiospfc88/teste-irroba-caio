@@ -14,15 +14,15 @@ const Comentarios = ({id}:ComentariosI) => {
   return (
     <Box color={"#69593C"} display={"flex"} justifyContent={"center"} mb={"8vh"}>
         <Box w={"80vw"}>
-            <Box fontWeight={700} fontSize={"1.6vw"} position={"relative"}>
+            <Box fontWeight={700} fontSize={{base: "3vw", md: "1.6vw"}} position={"relative"}>
                 Comentários
                 <Box display={"flex"} position={"absolute"} right={"0.2vw"} top={"0.2vw"} 
-                fontSize={"1vw"} color={"#69593C"}>
+                fontSize={{base: "1.8vw", md: "1vw"}} color={"#69593C"}>
                     Classificar por:
                     <Box>
                     <Menu>
                     <MenuButton as={Button} rightIcon={<FaAngleDown  />}
-                    bgColor={"transparent"} w={"10vw"} h={"vw"} fontSize={"1vw"} 
+                    bgColor={"transparent"} w={{base: "auto", md: "10vw"}} h={"vw"} fontSize={{base: "2vw", md: "1vw"}} 
                     color={"#69593C"} _hover={{bgColor: "transparent"}} fontWeight={700}
                     >
                        Mais recentes 
@@ -48,23 +48,24 @@ const Comentarios = ({id}:ComentariosI) => {
             <Box mt={"2.5vh"} mb={"2.5vh"}>
                 <Divider orientation='horizontal' />
             </Box>
-            <Box display={"flex"} gap={"1.2vw"} position={"relative"}>
-                <Box>
+            <Box display={"flex"} gap={{base: "1.8vw", md: "1.2vw"}} position={"relative"}>
+                <Box display={"flex"} justifyContent={"center"} flexDir={"column"}>
                     <Wrap>
                         <WrapItem>
-                            <Avatar name='Rudi Duarte' src='/images/usuario-comentario.jfif' size={"lg"}/>
+                            <Avatar name='Rudi Duarte' src='/images/usuario-comentario.jfif' 
+                            size={{base: "lg", md: "xl"}}/>
                         </WrapItem>
                     </Wrap>
                 </Box>
                 <Box>
-                    <Box color={"#69593C"} fontSize={"1.2vw"} fontWeight={700}>
+                    <Box color={"#69593C"} fontSize={{base: "1.8vw", md: "1.2vw"}} fontWeight={700}>
                         Rudi Duarte
                     </Box>
-                    <Box color={"#69593C"} mt={"0.8vh"} fontSize={"1vw"}>
+                    <Box color={"#69593C"} mt={"0.8vh"} fontSize={{base: "1.8vw", md: "1vw"}}>
                     {produtoParam[0].descricao}
                     </Box>
                 </Box>
-                <Box color={"#69593C"} position={"absolute"} right={"0.2vw"} fontSize={"1vw"}>
+                <Box color={"#69593C"} position={"absolute"} right={"0.2vw"} fontSize={{base: "1.8vw", md: "1vw"}}>
                     12/03/2020 - 18:42
                 </Box>
             </Box>
