@@ -53,7 +53,7 @@ const Destaques = () => {
               <Box display={"flex"} position={"absolute"} zIndex={2} w={"100%"} h={"100%"}
               flexDir={"column"} left={0} top={"9vw"}
               >
-                <Box display={"flex"} justifyContent={"center"} mt={{base: "15vh"}}>
+                <Box display={"flex"} justifyContent={"center"} mt={{base: "15vh", md: "0vh"}}>
                   <Button bgColor={"#7DE3B0"} color={"#FFFFFF"} onClick={()=>irParaCompraProduto(item.id)}>
                     Que fofo, eu quero!
                   </Button>

@@ -62,9 +62,11 @@ const ListaSubmenus = () => {
                                                     <Box w={"12vw"} borderLeftRadius={"10px"}>
                                                 
                                                 {isSubmenuOpen === subItem.id && (
-                                                    <Box w={"100vw"} borderLeftRadius={"10px"} ml={"1.8rem"}>
+                                                    <Box w={"100vw"} borderLeftRadius={"10px"} ml={"1.8rem"} cursor={"default"}>
                                                         {subItem.opcoesfinais.map((opcaoFinal) => (
-                                                            <Box key={opcaoFinal.id} color={"#7DE3B0"} p={2} _hover={{ bg: "transparent" }}>
+                                                            <Box key={opcaoFinal.id} color={"#7DE3B0"} p={2} _hover={{ bg: "transparent" }}
+                                                            cursor={"pointer"}
+                                                            >
                                                                 {opcaoFinal.label}
                                                             </Box>
                                                         ))}
