@@ -1,5 +1,5 @@
 "use client"
-import { Box, Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Input, InputGroup, InputRightElement, useDisclosure } from '@chakra-ui/react'
+import { Box, Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Input, InputGroup, InputRightElement, useDisclosure } from '@chakra-ui/react'
 import React from 'react'
 import Image from "next/image";
 import { LuMenu, LuSearch } from 'react-icons/lu';
@@ -8,11 +8,14 @@ import MenuInstitucional from './MenuInstitucional';
 import MenuMinhaConta from './MenuMinhaConta';
 import Carrinho from './Carrinho';
 import ListaSubmenus from './ListaSubmenus';
+import { FaCircleUser } from 'react-icons/fa6';
+import { useRouter } from 'next/navigation';
 
 
 const TopMenu = () => {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
+    const router = useRouter()
 
   return (
     <Box>
@@ -30,30 +33,47 @@ const TopMenu = () => {
                         isOpen={isOpen}
                         placement='left'
                         onClose={onClose}
+                        size={"full"}
                     >
                         <DrawerOverlay />
-                        <DrawerContent>
+                        <DrawerContent bgColor="#F8F6F2" w={"100%"}>
                         <DrawerCloseButton />
-                        <DrawerHeader>Create your account</DrawerHeader>
+                        <DrawerHeader color={"#69593C"}
+                        >Primeira Moda</DrawerHeader>
 
-                        <DrawerBody>
-                            <Input placeholder='Type here...' />
+                        <DrawerBody w={"100%"}>
+                            <Box display={"flex"} h={"8vh"} bgColor={"#f9f2c4"} gap={"1.5vw"}
+                            w={"100%"}
+                            >
+                                <Box display={"flex"} justifyContent={"center"} ml={"2vw"}
+                                flexDir={"column"} h={"100%"} color={"#69593C"}>
+                                    <FaCircleUser />
+                                </Box>
+                                <Button backgroundColor={"transparent"} color={"#69593C"}
+                                _hover={{bgColor: "transparent"}} fontWeight={700}
+                                >
+                                    Login
+                                </Button>
+                                <Box display={"flex"} justifyContent={"center"} 
+                                flexDir={"column"} h={"100%"} color={"#69593C"}>
+                                    ou
+                                </Box>                                   
+                                <Button backgroundColor={"transparent"} color={"#69593C"}
+                                _hover={{bgColor: "transparent"}} fontWeight={700}
+                                >
+                                    Cadastre-se
+                                </Button>
+                            </Box>
+                            
                         </DrawerBody>
-
-                        <DrawerFooter>
-                            <Button variant='outline' mr={3} onClick={onClose}>
-                            Cancel
-                            </Button>
-                            <Button colorScheme='blue'>Save</Button>
-                        </DrawerFooter>
                         </DrawerContent>
                     </Drawer>
                 </Box>
                 <Box display={"flex"} gap={"4vh"} flexDir={{base: "column", md: "row"}} alignItems={"center"} justifyContent={"center"}
                 pos={"relative"}
                 >
-                    <Box display={"flex"} flexDir={"column"} justifyContent={"center"}
-                    maxW={{ base: "60%", md: "85%", lg: "100%" }} h="auto" mt={{base: "5%", md: "1%"}}
+                    <Box display={"flex"} flexDir={"column"} justifyContent={"center"} onClick={()=> router.push("/")}
+                    maxW={{ base: "60%", md: "85%", lg: "100%" }} h="auto" mt={{base: "5%", md: "1%"}} cursor={"pointer"} 
                     >
                         <Image src={"/images/logo_primeira_moda.png"} alt='Logo Primeira Moda' width={216} height={96}/>  
                     </Box>

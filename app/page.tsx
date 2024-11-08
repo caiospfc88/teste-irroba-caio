@@ -9,6 +9,7 @@ import RodapeCategorias from "@/components/primeira-moda/RodapeCategorias";
 import BannerRedeSocial from "@/components/primeira-moda/BannerRedeSocial";
 import BannerPagamentosRodape from "@/components/primeira-moda/BannerPagamentosRodape";
 import { CarrinhoProvider } from "@/context/CarrinhoContext";
+import RodapeMobile from "@/components/primeira-moda/RodapeMobile";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <RodapeCategorias/>
       <BannerRedeSocial/>
       <BannerPagamentosRodape/>
+      <RodapeMobile/>
     </Box>
   );
 }

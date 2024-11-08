@@ -42,7 +42,7 @@ const Destaques = () => {
               cursor={"pointer"}
               bgColor="#FBFAF8"
               w="100%"
-              h={{ base: 'auto', md: '500px', lg: '700px' }}
+              h={'auto'}
               border="2px solid #FCF6B3"
               borderRadius="10px"
               p="1rem" position={"relative"}
@@ -53,17 +53,17 @@ const Destaques = () => {
               <Box display={"flex"} position={"absolute"} zIndex={2} w={"100%"} h={"100%"}
               flexDir={"column"} left={0} top={"9vw"}
               >
-                <Box display={"flex"} justifyContent={"center"}>
+                <Box display={"flex"} justifyContent={"center"} mt={{base: "15vh"}}>
                   <Button bgColor={"#7DE3B0"} color={"#FFFFFF"} onClick={()=>irParaCompraProduto(item.id)}>
                     Que fofo, eu quero!
                   </Button>
                 </Box>
-                <Box display={"flex"} justifyContent={"center"} mt={"8vw"} gap={"1.5vw"}>
-                  <Box fontSize={"2vw"} color={"#69593C"}
+                <Box display={"flex"} justifyContent={"center"} mt={{base: "30vw", md: "8vw"}} gap={"1.5vw"}>
+                  <Box fontSize={{base: "5vw", md: "2vw"}} color={"#69593C"}
                   >
                     <FaRegHeart />
                   </Box>
-                  <Box fontSize={"2vw"} color={"#69593C"}
+                  <Box fontSize={{base: "5vw", md: "2vw"}} color={"#69593C"}
                   >
                     <PiEye />
                   </Box>
@@ -73,12 +73,12 @@ const Destaques = () => {
                 <Box w="100%" display="flex" justifyContent="center" mt="1rem" position={"relative"}>
                   <Box display={"flex"} position={"absolute"} top={"1.2vh"} right={"0.2vw"} gap={"1vw"}>
                     <Box bgColor={"#F9E0E4"} color={"#69593C"} p={"0.2vw"} px={"0.8vw"} borderRadius={"5px"}
-                    fontWeight={500} fontSize={"0.8vw"} zIndex={1}
+                    fontWeight={500} fontSize={{base: "2.5vw", md: "0.8vw"}} zIndex={1}
                     >
                       SEM ESTOQUE
                     </Box>
                     <Box bgColor={"#7DE3B0"} color={"#FFFFFF"} p={"0.2vw"} px={"0.8vw"} borderRadius={"5px"}
-                    fontWeight={500} fontSize={"0.8vw"} zIndex={1}
+                    fontWeight={500} fontSize={{base: "2.5vw", md: "0.8vw"}} zIndex={1}
                     >
                       OFERTA
                     </Box>
@@ -117,7 +117,7 @@ const Destaques = () => {
               cursor={"pointer"}
               bgColor="#FBFAF8"
               w="100%"
-              h={{ base: 'auto', md: '500px', lg: '700px' }}
+              h={'auto'}
               border="2px solid #F6F3EF"
               borderRadius="10px"
               p="1rem"
@@ -128,12 +128,12 @@ const Destaques = () => {
                 <Box w="100%" display="flex" justifyContent="center" mt="1rem" position={"relative"}>
                   <Box display={"flex"} position={"absolute"} top={"1.2vh"} right={"0.2vw"} gap={"1vw"}>
                     <Box bgColor={"#F9E0E4"} color={"#69593C"} p={"0.2vw"} px={"0.8vw"} borderRadius={"5px"}
-                    fontWeight={500} fontSize={"0.8vw"}
+                    fontWeight={500} fontSize={{base: "2.5vw", md: "0.8vw"}}
                     >
                       SEM ESTOQUE
                     </Box>
                     <Box bgColor={"#7DE3B0"} color={"#FFFFFF"} p={"0.2vw"} px={"0.8vw"} borderRadius={"5px"}
-                    fontWeight={500} fontSize={"0.8vw"}
+                    fontWeight={500} fontSize={{base: "2.5vw", md: "0.8vw"}}
                     >
                       OFERTA
                     </Box>

@@ -19,7 +19,7 @@ const Produto = () => {
     const { id } = useParams();
 
   return (
-    <Box display={"flex"}>
+    <Box>
       <CarrinhoProvider>
         <TopMenu/>
         <CompraProduto id={Number(id)}/>
@@ -28,10 +28,10 @@ const Produto = () => {
       <Comentarios id={Number(id)}/>
       <ProdutosRelacionados/>
       <Newsletter/>
+      <RodapeMobile/>
       <RodapeCategorias/>
       <BannerRedeSocial/>
       <BannerPagamentosRodape/>
-      <RodapeMobile/>
     </Box>
   )
 }
